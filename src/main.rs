@@ -1,3 +1,20 @@
+enum DiaDaSemana {
+    Domingo,
+    Segunda,
+    Terça,
+    Quarta,
+    Quinta,
+    Sexta,
+    Sábado
+}
+
+fn eh_fim_de_semana(dia: DiaDaSemana) -> bool {
+    match dia {
+        DiaDaSemana::Sábado | DiaDaSemana::Domingo => true,
+        _ => false
+    }
+}
+
 fn arrays(){
     let notas:[f32; 4] = [6.5; 4];
     let indice:usize = 0;
@@ -26,4 +43,6 @@ fn matriz(){
 fn main() {
     arrays();
     matriz();
+
+    println!("É fim de semana? {}\n ", eh_fim_de_semana(DiaDaSemana::Domingo));
 }
