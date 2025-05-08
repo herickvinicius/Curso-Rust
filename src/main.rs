@@ -72,4 +72,24 @@ fn main() {
     println!("É fim de semana? {}\n ", eh_fim_de_semana(DiaDaSemana::Domingo));
 
     cores();
+    conteudo_opcional();
+}
+
+fn conteudo_opcional(){
+    let file_content = read_file(String::from(""));
+
+    match &file_content{
+        Some(value) => println!("{}", value),
+        None => println!("File does not exists!")
+    };
+
+    println!("{:?}", file_content);
+}
+
+fn read_file(path_to_file: String) -> Option<String> {
+    if path_to_file.len() != 0 {
+        Some(String::from("Conteúdo do arquivo"))
+    } else {
+        None
+    }
 }
