@@ -76,7 +76,7 @@ fn cores(){
 }
 
 fn conteudo_opcional(){
-    let file_content = read_file(String::from(""));
+    let file_content = read_file(String::from("./"));
 
     match &file_content{
         Some(value) => println!("{}", value),
@@ -84,6 +84,11 @@ fn conteudo_opcional(){
     };
 
     println!("{:?}", file_content);
+
+    //implementation if IF LET
+    if let Some(value) = file_content {
+        println!("Implementando if let: {}\n", value);
+    }
 }
 
 fn read_file(path_to_file: String) -> Option<String> {
