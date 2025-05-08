@@ -1,20 +1,11 @@
-// Remove warnings about unused pieces of code
-#[allow(dead_code)]
-enum DiaDaSemana {
-    Domingo,
-    Segunda,
-    Terça,
-    Quarta,
-    Quinta,
-    Sexta,
-    Sábado
-}
+fn main() {
+    arrays();
+    matriz();
 
-fn eh_fim_de_semana(dia: DiaDaSemana) -> bool {
-    match dia {
-        DiaDaSemana::Sábado | DiaDaSemana::Domingo => true,
-        _ => false
-    }
+    println!("É fim de semana? {}\n ", eh_fim_de_semana(DiaDaSemana::Domingo));
+
+    cores();
+    conteudo_opcional();
 }
 
 fn arrays(){
@@ -44,6 +35,25 @@ fn matriz(){
 
 // Remove warnings about unused pieces of code
 #[allow(dead_code)]
+enum DiaDaSemana {
+    Domingo,
+    Segunda,
+    Terça,
+    Quarta,
+    Quinta,
+    Sexta,
+    Sábado
+}
+
+fn eh_fim_de_semana(dia: DiaDaSemana) -> bool {
+    match dia {
+        DiaDaSemana::Sábado | DiaDaSemana::Domingo => true,
+        _ => false
+    }
+}
+
+// Remove warnings about unused pieces of code
+#[allow(dead_code)]
 enum Color {
     Red,
     Green,
@@ -63,16 +73,6 @@ fn cores(){
         Color::RGB(_, _, _) => "Desconhecido",
         Color::CYMK { cyan: _, yellow: _, magenta: _, black: _ } => "CYMK Desconhecido"
     });
-}
-
-fn main() {
-    arrays();
-    matriz();
-
-    println!("É fim de semana? {}\n ", eh_fim_de_semana(DiaDaSemana::Domingo));
-
-    cores();
-    conteudo_opcional();
 }
 
 fn conteudo_opcional(){
