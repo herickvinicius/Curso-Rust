@@ -161,18 +161,25 @@ struct Account {
     holder: Holder,
     balance: f64
 }
+impl Account {
+    fn withdraw(&mut self, value: f64) {
+        self.balance -= value;
+    }
+}
 
 fn conta_corrente() {
     let holder: Holder = Holder {
         first_name: String::from("Herick"),
         last_name: String::from("Vinicius")
     };
-    let conta: Account = Account {
+    let mut conta: Account = Account {
         holder,     // Attribute and variable have the same name. Can simplify.
         balance: 100.0
     };
     // let account_holder: String = String::from("Herick Vinicius");
     // let account_balance: f64 = 100.0;
+
+    conta.withdraw(50.0);
 
     println!("Dados da conta: Titular = {} {} | Saldo = {}",
         conta.holder.first_name,
