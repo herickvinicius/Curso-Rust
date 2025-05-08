@@ -153,19 +153,29 @@ fn vectors() {
 }
 
 // FINALLY SOME STRUCTS
+struct Holder {
+    first_name: String,
+    last_name: String
+}
 struct Account {
-    holder: String,
+    holder: Holder,
     balance: f64
 }
 
 fn conta_corrente() {
+    let holder: Holder = Holder {
+        first_name: String::from("Herick"),
+        last_name: String::from("Vinicius")
+    };
     let conta: Account = Account {
-        holder: String::from("Herick Vinicius"),
+        holder,     // Attribute and variable have the same name. Can simplify.
         balance: 100.0
     };
     // let account_holder: String = String::from("Herick Vinicius");
     // let account_balance: f64 = 100.0;
 
-    println!("Dados da conta: Titular = {} | Saldo = {}",
-        conta.holder, conta.balance);
+    println!("Dados da conta: Titular = {} {} | Saldo = {}",
+        conta.holder.first_name,
+        conta.holder.last_name,
+        conta.balance);
 }
