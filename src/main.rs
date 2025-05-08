@@ -6,6 +6,7 @@ fn main() {
 
     cores();
     conteudo_opcional();
+    vectors();
 }
 
 fn arrays(){
@@ -79,22 +80,44 @@ fn conteudo_opcional(){
     let file_content = read_file(String::from("./"));
 
     match &file_content{
+        // MyOption::Some(value) => println!("{}", value),
         Some(value) => println!("{}", value),
+        // MyOption::None => println!("File does not exists!")
         None => println!("File does not exists!")
     };
 
     println!("{:?}", file_content);
 
     //implementation if IF LET
+    // if let MyOption::Some(value) = file_content {
     if let Some(value) = file_content {
         println!("Implementando if let: {}\n", value);
     }
 }
 
+//Generics
+#[allow(dead_code)]
+enum MyOption<T> {
+    Some(T),
+    None
+}
+
+#[allow(dead_code)]
+enum MyResult<S, E> {
+    Ok(S),
+    Err(E)
+}
+// fn read_file(path_to_file: String) -> MyOption<String> {
 fn read_file(path_to_file: String) -> Option<String> {
     if path_to_file.len() != 0 {
+        // MyOption::Some(String::from("Conteúdo do arquivo"))
         Some(String::from("Conteúdo do arquivo"))
     } else {
+        // MyOption::None
         None
     }
+}
+
+fn vectors() {
+    
 }
