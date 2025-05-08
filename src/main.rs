@@ -7,6 +7,7 @@ fn main() {
     cores();
     conteudo_opcional();
     vectors();
+    conta_corrente();
 }
 
 fn arrays(){
@@ -149,4 +150,22 @@ fn vectors() {
         println!("Nota: {}", nota);
     }
     println!("{:?}", notas);
+}
+
+// FINALLY SOME STRUCTS
+struct Account {
+    holder: String,
+    balance: f64
+}
+
+fn conta_corrente() {
+    let conta: Account = Account {
+        holder: String::from("Herick Vinicius"),
+        balance: 100.0
+    };
+    // let account_holder: String = String::from("Herick Vinicius");
+    // let account_balance: f64 = 100.0;
+
+    println!("Dados da conta: Titular = {} | Saldo = {}",
+        conta.holder, conta.balance);
 }
