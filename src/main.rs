@@ -128,4 +128,23 @@ fn vectors() {
 
     notas.push(6.8);
     println!("{:?}", notas);
+
+    println!("Nota 1: {}", notas[0]);
+
+    println!("Nota 6: {}", match notas.get(5) {
+        Some(n) => *n,
+        None => 0.0
+    });
+
+    // popping values from the vector using WHILE LET
+    // while let Some(nota)= notas.pop() {
+    //     println!("Nota removida: {}", nota);
+    //     println!("{:?}", notas);
+    // }
+
+    // Looping thru the vector with FOR LET
+    for nota in &notas {
+        println!("Nota: {}", nota);
+    }
+    println!("{:?}", notas);
 }
